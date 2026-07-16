@@ -17,7 +17,7 @@ export function Header({ onNavigate }) {
       <nav className={menuOpen ? 'nav is-open' : 'nav'} aria-label="Main navigation">
         <NavLink to="/o-nas" onNavigate={onNavigate} onNavigateComplete={closeMenu}>O nas</NavLink>
         <NavLink to="/#learning" onNavigate={onNavigate} onNavigateComplete={closeMenu}>Nauka</NavLink>
-        <NavLink to="/informacje" onNavigate={onNavigate} onNavigateComplete={closeMenu}>Informacje</NavLink>
+        <a href="https://polskaszkolacanterbury.com/informacje-ogolne/" target="_blank" rel="noreferrer" onClick={closeMenu}>Informacje</a>
         <NavLink to="/#contact" onNavigate={onNavigate} onNavigateComplete={closeMenu}>Kontakt</NavLink>
         <a className="nav-cta" href="https://polskaszkolacanterbury.com/kontakt/" target="_blank" rel="noreferrer" onClick={closeMenu}>Zapisy <Arrow /></a>
       </nav>

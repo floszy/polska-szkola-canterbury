@@ -4,7 +4,7 @@ import { Header } from './components/Header'
 import { Footer } from './components/Footer'
 import { NavLink } from './components/NavLink'
 import { Arrow } from './components/Arrow'
-import { InformationPage } from './InformationPage'
+
 
 function AboutPage({ onNavigate }) {
   return <>
@@ -21,9 +21,7 @@ function App() {
   const [path, setPath] = useState(window.location.pathname)
   useEffect(() => { const updatePath = () => setPath(window.location.pathname); window.addEventListener('popstate', updatePath); return () => window.removeEventListener('popstate', updatePath) }, [])
   if (path === '/o-nas') return <AboutPage onNavigate={setPath} />
-  if (path === '/informacje') return <InformationPage onNavigate={setPath} />
-
-  return (
+ return (
     <main>
       <Header onNavigate={setPath} />
 
@@ -81,8 +79,8 @@ function App() {
         <div className="info-heading"><h2>Wszystko, co<br />warto <em>wiedzieć.</em></h2><p>Najważniejsze informacje dla rodziców w jednym miejscu.</p></div>
         <div className="info-links">
           <NavLink to="#enrol" onNavigate={setPath}><span>Zapisy do szkoły</span><b>01</b><Arrow /></NavLink>
-          <NavLink to="/informacje" onNavigate={setPath}><span>Daty zajęć</span><b>02</b><Arrow /></NavLink>
-          <NavLink to="/informacje#fees" onNavigate={setPath}><span>Opłaty za szkołę</span><b>03</b><Arrow /></NavLink>
+          <a href="https://polskaszkolacanterbury.com/informacje-ogolne/" target="_blank" rel="noreferrer"><span>Daty zajęć</span><b>02</b><Arrow /></a>
+          <a href="https://polskaszkolacanterbury.com/informacje-ogolne/" target="_blank" rel="noreferrer"><span>Opłaty za szkołę</span><b>03</b><Arrow /></a>
           <NavLink to="#contact" onNavigate={setPath}><span>Poznaj naszą kadrę</span><b>04</b><Arrow /></NavLink>
         </div>
       </section>
